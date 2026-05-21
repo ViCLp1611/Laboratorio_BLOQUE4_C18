@@ -55,6 +55,7 @@ public class StormEvent implements SimulationEvent {
                     "Turistas evacuados: " + turistasEvacuados,
                     LocalDateTime.now()));
         }
+        state.addExpense(GASTO_OPERATIVO);
     }
 
     @Override

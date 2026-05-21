@@ -46,6 +46,7 @@ public class BlackoutEvent implements SimulationEvent {
                     LocalDateTime.now()));
             csvWriter.appendEvent(toRecord(state.getPasoActual()));
         }
+        state.addExpense(GASTO_OPERATIVO);
     }
 
     @Override

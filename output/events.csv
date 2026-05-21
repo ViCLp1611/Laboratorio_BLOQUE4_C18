@@ -1,0 +1,16 @@
+step,eventName,description,affectedEntities,timestamp
+1,ESCAPE_DINOSAURIO,Un dinosaurio escapo de su recinto,Herbivoro 14; turista atacado: Turista 1,2026-05-21T11:08:45.905165300
+3,TORMENTA_TORRENCIAL,Tormenta fuerte obliga a evacuar zonas del parque,Turistas evacuados: 14,2026-05-21T11:08:45.952577400
+3,TORMENTA_TORRENCIAL,Tormenta fuerte obliga a evacuar zonas del parque,Turistas evacuados: 14,2026-05-21T11:08:45.953588400
+0,POWER_FAILURE,Planta Electrica no esta operativa,Planta Electrica,2026-05-21T11:08:45.954575200
+3,APAGON_MASIVO,Falla electrica general en el parque,PowerPlant,2026-05-21T11:08:45.955593300
+4,ESCAPE_DINOSAURIO,Un dinosaurio escapo de su recinto,Herbivoro 13,2026-05-21T11:08:45.980138
+4,TORMENTA_TORRENCIAL,Tormenta fuerte obliga a evacuar zonas del parque,Turistas evacuados: 19,2026-05-21T11:08:45.981140200
+5,ESCAPE_DINOSAURIO,Un dinosaurio escapo de su recinto,Herbivoro 9,2026-05-21T11:08:46.014682600
+6,ESCAPE_DINOSAURIO,Un dinosaurio escapo de su recinto,Herbivoro 8,2026-05-21T11:08:46.047672500
+6,ESCAPE_DINOSAURIO,Un dinosaurio escapo de su recinto,Carnivoro 5; turista atacado: Turista 8,2026-05-21T11:08:46.047672500
+7,TORMENTA_TORRENCIAL,Tormenta fuerte obliga a evacuar zonas del parque,Turistas evacuados: 33,2026-05-21T11:08:46.077672500
+0,POWER_FAILURE,Planta Electrica no esta operativa,Planta Electrica,2026-05-21T11:08:46.078674400
+7,APAGON_MASIVO,Falla electrica general en el parque,PowerPlant,2026-05-21T11:08:46.079664800
+9,ESCAPE_DINOSAURIO,Un dinosaurio escapo de su recinto,Herbivoro 7,2026-05-21T11:08:46.149250600
+9,ESCAPE_DINOSAURIO,Un dinosaurio escapo de su recinto,Herbivoro 4,2026-05-21T11:08:46.149250600

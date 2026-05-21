@@ -2,7 +2,6 @@ package com.axity.dinosaurpark.simulation;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import com.axity.dinosaurpark.event.SimulationEvent;
 import com.axity.dinosaurpark.model.Guard;
@@ -34,15 +33,25 @@ public class SimulationEngine {
         for (int step = 1; step <= totalSteps; step++) {
             state.setPasoActual(step);
 
+            double ingresosAntes = calcularDineroGastado();
             procesarLlegadas();
             moverTuristas();
+            state.addRevenue(calcularDineroGastado() - ingresosAntes);
             ejecutarTickZonas();
             ejecutarEvento(step);
-            ejecutarTrabajadores();
             ParkMonitor.displaySnapshot(state);
+            ejecutarTrabajadores();
 
             state.incrementStep();
         }
+    }
+
+    private double calcularDineroGastado() {
+        double total = 0.0;
+        for (Tourist tourist : state.getTuristas()) {
+            total += tourist.getDineroGastado();
+        }
+        return total;
     }
 
     private void procesarLlegadas() {
@@ -91,8 +100,10 @@ public class SimulationEngine {
     }
 
     private void ejecutarEvento(int step) {
-        Optional<SimulationEvent> evento = scheduler.checkForEvent(step);
-        evento.ifPresent(simulationEvent -> simulationEvent.execute(state, state.getRng()));
+        List<SimulationEvent> eventos = scheduler.checkForEvents(step);
+        for (SimulationEvent evento : eventos) {
+            evento.execute(state, state.getRng());
+        }
     }
 
     private void ejecutarTrabajadores() {

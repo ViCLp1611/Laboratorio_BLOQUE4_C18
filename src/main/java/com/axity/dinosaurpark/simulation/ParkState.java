@@ -162,6 +162,26 @@ public class ParkState {
         return total;
     }
 
+    public int countEscapedDinosaurs() {
+        int total = 0;
+        for (Dinosaur dinosaur : dinosaurios) {
+            if (dinosaur.getStatus() == DinosaurStatus.ESCAPED) {
+                total++;
+            }
+        }
+        return total;
+    }
+
+    public int countAttackedTourists() {
+        int total = 0;
+        for (Tourist tourist : turistas) {
+            if (tourist.getStatus() == TouristStatus.ATTACKED) {
+                total++;
+            }
+        }
+        return total;
+    }
+
     private static <T> List<T> copiarLista(List<T> valores) {
         if (valores == null) {
             return new ArrayList<>();
