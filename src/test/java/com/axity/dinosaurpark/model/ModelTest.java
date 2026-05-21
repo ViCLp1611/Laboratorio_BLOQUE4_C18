@@ -1,11 +1,11 @@
 package com.axity.dinosaurpark.model;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 
 import com.axity.dinosaurpark.zone.PowerPlant;
@@ -29,7 +29,10 @@ class ModelTest {
         assertEquals(25.0, tourist.getDineroGastado());
         assertEquals(List.of("Centro"), tourist.getZonasVisitadas());
         assertEquals(TouristStatus.IN_PARK, tourist.getStatus());
-        assertThrows(UnsupportedOperationException.class, () -> tourist.getZonasVisitadas().add("VIP"));
+        UnsupportedOperationException exception = assertThrows(
+                UnsupportedOperationException.class,
+                () -> tourist.getZonasVisitadas().add("VIP"));
+        assertNotNull(exception);
     }
 
     @Test
@@ -71,7 +74,7 @@ class ModelTest {
         technician.repairIfNeeded(plant);
 
         assertEquals("TECNICO", technician.getRole());
-        assertEquals(true, plant.isOperational());
+        assertEquals(true, plant.estaOperativa());
     }
 
     @Test

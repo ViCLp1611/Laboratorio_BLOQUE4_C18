@@ -35,7 +35,7 @@ class ZoneTest {
         arrival.agregarACola(second);
         arrival.agregarACola(third);
 
-        List<Tourist> admitted = arrival.processBatch(3, writer);
+        List<Tourist> admitted = arrival.procesarLote(3, writer);
 
         assertEquals(2, admitted.size());
         assertEquals(1, arrival.getTamanoColaEspera());
@@ -55,7 +55,7 @@ class ZoneTest {
         CentralHub hub = new CentralHub("Centro", 1, 25.0, 1.0);
         Tourist tourist = new Tourist(1, "Ana");
 
-        hub.visit(tourist, new Random(1), writer);
+        hub.visitar(tourist, new Random(1), writer);
 
         assertEquals(25.0, tourist.getDineroGastado());
         assertEquals(List.of("Centro"), tourist.getZonasVisitadas());
@@ -68,7 +68,7 @@ class ZoneTest {
         BathroomZone bathroom = new BathroomZone("Banos", 1, 2, 15.0, 1.0);
         Tourist tourist = new Tourist(1, "Ana");
 
-        assertTrue(bathroom.tryEnter(tourist, new Random(1), writer));
+        assertTrue(bathroom.intentarEntrar(tourist, new Random(1), writer));
         assertFalse(bathroom.hasCapacity());
         assertEquals(15.0, tourist.getDineroGastado());
 
@@ -83,12 +83,12 @@ class ZoneTest {
         CsvWriter writer = new CsvWriter(tempDir.toString());
         PowerPlant plant = new PowerPlant("Planta", 1, 10.0, 2.0, 1.0, 100.0, 500.0);
 
-        plant.tick(new Random(1), writer);
+        plant.paso(new Random(1), writer);
 
-        assertFalse(plant.isOperational());
+        assertFalse(plant.estaOperativa());
         assertEquals(8.0, plant.getEnergy());
         plant.reparar();
-        assertTrue(plant.isOperational());
+        assertTrue(plant.estaOperativa());
     }
 
     @Test
@@ -99,7 +99,7 @@ class ZoneTest {
                 "VIP", 1, 80.0, ExperienceType.VIP, List.of(dinosaur));
         Tourist tourist = new Tourist(1, "Ana");
 
-        SatisfactionSurvey survey = enclosure.visit(tourist, new Random(1), writer);
+        SatisfactionSurvey survey = enclosure.visitar(tourist, new Random(1), writer);
 
         assertNotNull(survey);
         assertEquals(80.0, tourist.getDineroGastado());
