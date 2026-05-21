@@ -30,16 +30,6 @@ El código fuente se organiza en paquetes según la responsabilidad de cada mód
 - `simulation`: estado global, agenda de eventos y motor principal de simulación.
 - `monitoring`: impresión de snapshots del estado actual del parque en consola.
 
-## Diagramas del proyecto
-
-Se incluyen los siguientes diagramas en el directorio `images/`:
-
-- `images/diagrama-uml.png`: diagrama de clases del sistema.
-- `images/flujo-simulacion.png`: flujo de la simulación.
-
-![Diagrama UML](images/diagrama-uml.png)
-
-![Flujo de simulación](images/flujo-simulacion.png)
 
 ## Patrones de diseño utilizados
 
