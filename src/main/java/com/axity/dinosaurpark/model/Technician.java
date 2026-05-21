@@ -20,4 +20,8 @@ public class Technician extends Worker {
             plant.reparar();
         }
     }
+
+    public void repairIfNeeded(PowerPlant plant) {
+        repararSiEsNecesario(plant);
+    }
 }

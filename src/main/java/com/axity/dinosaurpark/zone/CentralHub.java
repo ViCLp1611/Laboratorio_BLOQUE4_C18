@@ -49,6 +49,10 @@ public class CentralHub implements ParkZone {
         exit(tourist);
     }
 
+    public void visit(Tourist tourist, Random rng, CsvWriter csvWriter) {
+        visitar(tourist, rng, csvWriter);
+    }
+
     public List<Tourist> getTuristasActuales() {
         return Collections.unmodifiableList(turistasActuales);
     }

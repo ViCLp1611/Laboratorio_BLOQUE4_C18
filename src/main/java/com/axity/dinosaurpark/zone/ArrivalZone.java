@@ -64,6 +64,10 @@ public class ArrivalZone implements ParkZone {
         return turistasAdmitidos;
     }
 
+    public List<Tourist> processBatch(int batchSize, CsvWriter csvWriter) {
+        return procesarLote(batchSize, csvWriter);
+    }
+
     public int getTamanoColaEspera() {
         return colaEspera.size();
     }

@@ -57,6 +57,10 @@ public class ObservationEnclosure implements ParkZone {
         return survey;
     }
 
+    public SatisfactionSurvey visit(Tourist tourist, Random rng, CsvWriter csvWriter) {
+        return visitar(tourist, rng, csvWriter);
+    }
+
     public SatisfactionSurvey realizarEncuesta(Tourist tourist, Random rng) {
         Random random = rng == null ? new Random() : rng;
         int minScore;

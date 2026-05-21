@@ -61,6 +61,10 @@ public class PowerPlant implements ParkZone {
         }
     }
 
+    public void tick(Random rng, CsvWriter csvWriter) {
+        paso(rng, csvWriter);
+    }
+
     public void activarFalla(CsvWriter csvWriter) {
         operativa = false;
         registrarGasto(csvWriter, new ExpenseRecord(
