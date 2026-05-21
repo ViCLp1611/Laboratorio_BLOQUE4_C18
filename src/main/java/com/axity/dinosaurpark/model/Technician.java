@@ -1,5 +1,6 @@
 package com.axity.dinosaurpark.model;
 
+import com.axity.dinosaurpark.simulation.ParkState;
 import com.axity.dinosaurpark.zone.PowerPlant;
 
 /*
@@ -13,6 +14,11 @@ public class Technician extends Worker {
     @Override
     public String getRole() {
         return "TECNICO";
+    }
+
+    @Override
+    public void ejecutarTarea(ParkState state) {
+        repararSiEsNecesario(state.getPowerPlant());
     }
 
     public void repararSiEsNecesario(PowerPlant plant) {

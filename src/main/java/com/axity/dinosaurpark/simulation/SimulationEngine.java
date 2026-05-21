@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.axity.dinosaurpark.event.SimulationEvent;
-import com.axity.dinosaurpark.model.Guard;
-import com.axity.dinosaurpark.model.Technician;
 import com.axity.dinosaurpark.model.Tourist;
 import com.axity.dinosaurpark.model.TouristStatus;
 import com.axity.dinosaurpark.model.Worker;
@@ -108,11 +106,7 @@ public class SimulationEngine {
 
     private void ejecutarTrabajadores() {
         for (Worker worker : state.getTrabajadores()) {
-            if (worker instanceof Guard guard) {
-                guard.recaptureEscapedDinosaurs(state.getDinosaurios());
-            } else if (worker instanceof Technician technician) {
-                technician.repairIfNeeded(state.getPowerPlant());
-            }
+            worker.ejecutarTarea(state);
         }
     }
 }

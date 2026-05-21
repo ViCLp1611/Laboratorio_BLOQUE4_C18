@@ -1,5 +1,7 @@
 package com.axity.dinosaurpark.model;
 
+import com.axity.dinosaurpark.simulation.ParkState;
+
 /*
  * Base comun para los trabajadores del parque.
  * Cada subclase define su rol concreto mediante getRole().
@@ -28,4 +30,6 @@ public abstract class Worker {
     }
 
     public abstract String getRole();
+
+    public abstract void ejecutarTarea(ParkState state);
 }
