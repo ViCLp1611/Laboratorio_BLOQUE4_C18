@@ -1,7 +1,14 @@
 package com.axity.dinosaurpark;
 
+import com.axity.dinosaurpark.config.ParkConfig;
+
 public class Main {
+
     public static void main(String[] args) {
-        System.out.println("Parque Turístico de Dinosaurios");
+
+        ParkConfig config = ParkConfig.getInstance();
+
+        System.out.println(config.getSeed());
+        System.out.println(config.getTotalSteps());
     }
 }
