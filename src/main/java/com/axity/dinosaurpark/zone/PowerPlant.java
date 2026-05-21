@@ -79,6 +79,10 @@ public class PowerPlant implements ParkZone {
         }
     }
 
+    public void triggerFailure(CsvWriter csvWriter) {
+        activarFalla(csvWriter);
+    }
+
     public void reparar() {
         operativa = true;
         energiaDisponible = Math.max(energiaDisponible, consumoPorPaso * 10.0);
@@ -86,6 +90,10 @@ public class PowerPlant implements ParkZone {
 
     public boolean estaOperativa() {
         return operativa;
+    }
+
+    public boolean isOperational() {
+        return estaOperativa();
     }
 
     public double getEnergy() {

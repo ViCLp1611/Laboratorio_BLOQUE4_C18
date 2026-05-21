@@ -1,17 +1,17 @@
 package com.axity.dinosaurpark.zone;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Random;
-import java.time.LocalDateTime;
 
 import com.axity.dinosaurpark.model.Tourist;
 import com.axity.dinosaurpark.persistence.CsvWriter;
 import com.axity.dinosaurpark.persistence.RevenueRecord;
 
 /*
- * Zona de baños: usa cupos temporales y libera cada turista despues de cierto
+ * Zona de banos: usa cupos temporales y libera cada turista despues de cierto
  * numero de pasos de simulacion.
  */
 public class BathroomZone implements ParkZone {
@@ -51,15 +51,19 @@ public class BathroomZone implements ParkZone {
         return true;
     }
 
+    public boolean tryEnter(Tourist tourist, Random rng, CsvWriter csvWriter) {
+        return intentarEntrar(tourist, rng, csvWriter);
+    }
+
     public void tick() {
         Iterator<Map.Entry<Tourist, Integer>> iterator = cuposOcupados.entrySet().iterator();
         while (iterator.hasNext()) {
             Map.Entry<Tourist, Integer> entry = iterator.next();
-            int remainingSteps = entry.getValue() - 1;
-            if (remainingSteps <= 0) {
+            int pasosRestantes = entry.getValue() - 1;
+            if (pasosRestantes <= 0) {
                 iterator.remove();
             } else {
-                entry.setValue(remainingSteps);
+                entry.setValue(pasosRestantes);
             }
         }
     }
