@@ -7,36 +7,36 @@ import java.time.LocalDateTime;
  */
 public class Ticket {
     private final long id;
-    private final int touristId;
-    private final double price;
-    private final String category;
-    private final LocalDateTime issuedAt;
+    private final int turistaId;
+    private final double precio;
+    private final String categoria;
+    private final LocalDateTime emitidoEn;
 
-    public Ticket(long id, int touristId, double price, String category, LocalDateTime issuedAt) {
+    public Ticket(long id, int turistaId, double precio, String categoria, LocalDateTime emitidoEn) {
         this.id = id;
-        this.touristId = touristId;
-        this.price = price;
-        this.category = category;
-        this.issuedAt = issuedAt;
+        this.turistaId = turistaId;
+        this.precio = precio;
+        this.categoria = categoria;
+        this.emitidoEn = emitidoEn;
     }
 
     public long getId() {
         return id;
     }
 
-    public int getTouristId() {
-        return touristId;
+    public int getTuristaId() {
+        return turistaId;
     }
 
-    public double getPrice() {
-        return price;
+    public double getPrecio() {
+        return precio;
     }
 
-    public String getCategory() {
-        return category;
+    public String getCategoria() {
+        return categoria;
     }
 
-    public LocalDateTime getIssuedAt() {
-        return issuedAt;
+    public LocalDateTime getEmitidoEn() {
+        return emitidoEn;
     }
 }

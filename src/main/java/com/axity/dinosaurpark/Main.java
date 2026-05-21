@@ -8,7 +8,7 @@ public class Main {
 
         ParkConfig config = ParkConfig.getInstance();
 
-        System.out.println(config.getSeed());
-        System.out.println(config.getTotalSteps());
+        System.out.println("Semilla: " + config.getSeed());
+        System.out.println("Pasos totales: " + config.getTotalSteps());
     }
 }

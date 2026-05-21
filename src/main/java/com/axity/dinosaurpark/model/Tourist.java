@@ -8,15 +8,15 @@ public class Tourist {
     private final int id;
     private final String name;
     private TouristStatus status;
-    private double moneySpent;
-    private final List<String> visitedZones;
+    private double dineroGastado;
+    private final List<String> zonasVisitadas;
 
     public Tourist(int id, String name) {
         this.id = id;
         this.name = name;
         this.status = TouristStatus.WAITING;
-        this.moneySpent = 0.0;
-        this.visitedZones = new ArrayList<>();
+        this.dineroGastado = 0.0;
+        this.zonasVisitadas = new ArrayList<>();
     }
 
     public int getId() {
@@ -35,23 +35,23 @@ public class Tourist {
         this.status = status;
     }
 
-    public double getMoneySpent() {
-        return moneySpent;
+    public double getDineroGastado() {
+        return dineroGastado;
     }
 
-    public void spend(double amount) {
+    public void gastar(double amount) {
         if (amount > 0) {
-            moneySpent += amount;
+            dineroGastado += amount;
         }
     }
 
-    public void recordVisit(String zoneName) {
+    public void registrarVisita(String zoneName) {
         if (zoneName != null && !zoneName.trim().isEmpty()) {
-            visitedZones.add(zoneName);
+            zonasVisitadas.add(zoneName);
         }
     }
 
-    public List<String> getVisitedZones() {
-        return Collections.unmodifiableList(visitedZones);
+    public List<String> getZonasVisitadas() {
+        return Collections.unmodifiableList(zonasVisitadas);
     }
 }

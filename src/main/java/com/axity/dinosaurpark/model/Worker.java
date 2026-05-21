@@ -7,12 +7,12 @@ package com.axity.dinosaurpark.model;
 public abstract class Worker {
     private final int id;
     private final String name;
-    private final double dailySalary;
+    private final double salarioDiario;
 
-    public Worker(int id, String name, double dailySalary) {
+    public Worker(int id, String name, double salarioDiario) {
         this.id = id;
         this.name = name;
-        this.dailySalary = dailySalary;
+        this.salarioDiario = salarioDiario;
     }
 
     public int getId() {
@@ -23,8 +23,8 @@ public abstract class Worker {
         return name;
     }
 
-    public double getDailySalary() {
-        return dailySalary;
+    public double getSalarioDiario() {
+        return salarioDiario;
     }
 
     public abstract String getRole();

@@ -4,25 +4,25 @@ package com.axity.dinosaurpark.model;
  * Encuesta inmutable asociada a un turista y a un recinto visitado.
  */
 public class SatisfactionSurvey {
-    private final int touristId;
-    private final String enclosureName;
-    private final int score;
+    private final int turistaId;
+    private final String recintoNombre;
+    private final int puntaje;
 
-    public SatisfactionSurvey(int touristId, String enclosureName, int score) {
-        this.touristId = touristId;
-        this.enclosureName = enclosureName;
-        this.score = score;
+    public SatisfactionSurvey(int turistaId, String recintoNombre, int puntaje) {
+        this.turistaId = turistaId;
+        this.recintoNombre = recintoNombre;
+        this.puntaje = puntaje;
     }
 
-    public int getTouristId() {
-        return touristId;
+    public int getTuristaId() {
+        return turistaId;
     }
 
-    public String getEnclosureName() {
-        return enclosureName;
+    public String getRecintoNombre() {
+        return recintoNombre;
     }
 
-    public int getScore() {
-        return score;
+    public int getPuntaje() {
+        return puntaje;
     }
 }

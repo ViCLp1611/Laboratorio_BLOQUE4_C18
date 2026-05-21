@@ -12,12 +12,12 @@ public class Technician extends Worker {
 
     @Override
     public String getRole() {
-        return "TECHNICIAN";
+        return "TECNICO";
     }
 
-    public void repairIfNeeded(PowerPlant plant) {
-        if (plant != null && !plant.isOperational()) {
-            plant.repair();
+    public void repararSiEsNecesario(PowerPlant plant) {
+        if (plant != null && !plant.estaOperativa()) {
+            plant.reparar();
         }
     }
 }
